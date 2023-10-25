@@ -1,30 +1,31 @@
 import React, {useEffect, useState} from 'react'
+import { Modal } from 'react-responsive-modal';
 import "../product.css";
 
 const Product = ({}) => {
     
     const [isMobile, setIsMobile] = useState(false)
+    const [open, setOpen] = useState(false);
+    const [email, setEmail] = useState("");
 
-    const productInfo = {
-        img: "https://preview.ibb.co/cRRaiy/nike.png",
-        category: "Men's shoe",
-        name: "Nike Air Max 270",
-        description: "The Nike Air Max 270 Men's Shoe is inspired by two icons of big Air: the Air Max 180 and Air Max 93. It features Nike's biggest heel Air unit yet for a super-soft ride that feels as impossible as it looks.",
-        price: "114.95"
-    }
+    const productInfo = JSON.parse(localStorage.getItem("product"))
  
     //choose the screen size 
+    const onCloseModal = () => setOpen(false);
+    const onOpenModal = () => {
+        setOpen(true)
+      };
     const handleResize = () => {
-        console.log(window.innerWidth);
       if (window.innerWidth < 720) {
-        console.log("-- mobile?")
           setIsMobile(true)
       } else {
-        console.log("desktop??")
           setIsMobile(false)
       }
     }
     
+    const onSubmit  = () => {
+        onCloseModal();
+    }
     // create an event listener
     useEffect(() => {
       window.addEventListener("resize", handleResize)
@@ -46,9 +47,10 @@ const Product = ({}) => {
                             <p> {productInfo.description}</p> 
                         </div>
                         <div className="cart-price">
-                            <button className="button1"> Add to Bag </button>
+                            <button className="button1" onClick={() => {onOpenModal()}}> Add to Bag </button>
                             <h2>£{productInfo.price}</h2>
                         </div>
+                        <button className="button2" onClick={() => {onOpenModal()}}> Sign-up & save 10% </button>
                     </div>
                 </div>
             }
@@ -68,11 +70,24 @@ const Product = ({}) => {
                     </div>
                     <div className="cart-price">
                         <button className="button1"> Add to Bag </button>
-                        <h2>£{productInfo.price}</h2>
+                        <h2>${productInfo.price}</h2>
+                        
                     </div>
+                    <button className="button2" onClick={() => {onOpenModal()}}> Sign-up & save 10% </button>
                 </div>
             </div>  
             }
+
+            <Modal open={open} onClose={onCloseModal} center>
+                <div className="emailForm">
+                    <h2>Sign-up for 10% Discount!</h2>
+                    <div className='content'>
+                        please put your email below
+                    </div>
+                    <input value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    <button onClick={() => {onSubmit()}}>Submit</button>
+                </div>                
+            </Modal>
              
                     
         </div>

@@ -30,7 +30,7 @@ code {
 .image-item img {
   aspect-ratio: 1/1;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 ul {
@@ -46,15 +46,27 @@ a {
 a:hover {
   color: #111;
 }
+
+h1 {
+ font-family: "Permanent Marker";
+ font-size: 40px;
+}
+button {
+ font-family: "Poppins";
+}
 h2 {
   font-weight: 700;
-  color: #2685ad;
-  font-size: 1.6rem;
-  line-height: 1.2;
+    color: #2685ad;
+    font-size: 1.6rem;
+    line-height: 32px;
+    font-family: "Bebas Neue";
+    letter-spacing: 1.5px;
 }
 
 p {
   color: #0e3e52;
+  letter-spacing: 1px;
+  font-family: "Roboto";
   margin-top: 15px;
   margin-bottom: 35px;
 }
@@ -340,36 +352,126 @@ p {
   left: 4px;
 }
 
-.react-responsive-modal-modal {
+#landing-modal {
   background: transparent !important;
   box-shadow: none !important;
 }
-.react-responsive-modal-closeButton {
+#landing-modal .react-responsive-modal-closeButton {
   display: none !important;
 }
 
-.react-responsive-modal-modal .image-item img {
-  width: 400px !important;
-  height: 400px !important;
+#landing-modal .image-item img {
+  width: 800px !important;
+  height: 500px !important;
 }
-.react-responsive-modal-modal .image-item {
+#landing-modal .image-item {
   width: fit-content!important;
   height: fit-content !important;
   background-color: transparent;
 }
 
-.productView button {
-  width: fit-content;
-  font-size: 20px;
-  padding: 7px 20px;
-  border-radius: 10px;
-  border: none;
-  margin-top: 10px;
+.productView {
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (max-width: 414px) {
-  .react-responsive-modal-modal .image-item img {
+  #main .react-responsive-modal-modal .image-item img {
     width: 300px !important;
     height: 300px !important;
   }
+}
+
+.productView button {
+  display: flex;
+   align-items: center;
+  position: relative;
+  height: 50px;
+  width: 150px;
+  background-image: linear-gradient(40deg, #0ba360 0%, #3cba92 100%);
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#toggle {
+  position: absolute;
+  right: 20%;
+  top: 3%;
+  width: 50px;
+  display: flex;
+  padding: 5px;
+  background-color: #1a202c;
+  display: block;
+  border-radius: 1000px;
+  cursor: pointer;
+  box-shadow: 0px 5px 20px -10px #000000;
+  transition: background-color 0.2s ease-in;
+}
+
+#toggle .toggle-inner {
+  width: 20px;
+  height: 15px;
+  background-color: white;
+  border-radius: 1000px;
+  transition: margin-left 0.2s ease-in, background-color 0.2s ease-in;
+}
+
+#toggle .toggle-inner.toggle-active {
+  margin-left: 20px;
+}
+
+.dark-mode p{
+  color: white;
+}
+
+.dark-mode .rounded-background-box {
+  background-color: #1a202c;
+}
+
+.dark-mode .rounded-background-box p{
+  color: white;
+}
+.dark-mode .rounded-background-box h2{
+  color: white;
+}
+.dark-mode .rounded-background-box h1{
+  color: white;
+}
+.dark-mode .rounded-background-box span{
+  color: white;
+}
+
+.dark-mode .sidenav {
+  background-color: #1a202c;
+}
+.dark-mode #main .menu {
+  background-color: #1a202c;
+ 
+}
+
+.dark-mode #main #nav-icon span {
+  background-color: white;
+}
+
+.dark-mode h1{
+  color: white;
+}
+
+.dark-mode #toggle {
+  background-color: white;
+}
+
+.dark-mode #toggle .toggle-inner {
+  background-color: #1a202c;
+}
+
+.emailForm button{
+ margin-left: 10px;
 }

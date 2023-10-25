@@ -4,13 +4,14 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import App from './components/App';
 import Product from './components/product';
+import DarkMode from './components/darkmode';
 import rootReducer from './reducers';
 import {Route, Routes, BrowserRouter as Router} from 'react-router-dom';
-import './index.css';
 const store = createStore(rootReducer);
 
 ReactDOM.render(
     <Provider store={ store }>
+        <DarkMode />
         <Router>
             <Routes>
                 <Route exact path="/" element={<App />} />
