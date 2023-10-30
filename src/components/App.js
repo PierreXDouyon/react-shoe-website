@@ -54,7 +54,7 @@ const App = ({ }) => {
 
     const ViewProduct = (product) => {
         localStorage.setItem('product', JSON.stringify(product))
-        navigate("/product");
+        navigate("/web-framework/react-shoe/product");
         // onOpenModal(product)
     }
 

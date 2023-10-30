@@ -1,4 +1,18 @@
+# react-shoe
 
+> A Landing Page & Product Page for Ficticious Atletic Shoe Commpany "Maxlete"
+
+
+**components**
+ - Components for all pages.
+    - Landing page
+    - Product page
+    - Dark mode
+
+**Product Data**
+    Currently, it's working with static data.
+
+## Project setup
 
 ##### Installed required project dependencies
 
