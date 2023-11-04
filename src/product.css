@@ -1,9 +1,10 @@
 
 
-h1 {
+.product-info h1 {
   font-family: "Permanent Marker";
   letter-spacing: 1.5px;
-  font-size: 40px;
+  font-size: 3.5rem;
+  color: #673b90 !important ;
  }
  button {
   font-family: "Poppins";
@@ -17,17 +18,17 @@ h1 {
    font-family: "Bebas Neue";
  }
  
- p {
+ .product-info p {
   letter-spacing: 1px;
-   color: #0e3e52;
+   font-size: 1.25rem !important;
+   font-weight: 550!important;
    font-family: "Roboto";
-   margin-top: 15px;
-   margin-bottom: 35px;
+   margin-top: -5px!important;
  }
+
 .rounded-background-box h1{
   
   letter-spacing: 1.5px;
-  font-size: 36px;
   font-weight: 600;
   color: #353535;
 }
@@ -35,8 +36,8 @@ h1 {
 .rounded-background-box h3{
   
   letter-spacing: 1.5px;
-  font-size: 24px;
-  font-weight: 300;
+  font-size: 32px;
+  font-weight: 500;
   color: #353535;
 }
 
@@ -58,9 +59,8 @@ h1 {
 
 .rounded-background-box {
   margin: 100px auto;
-  /* width: 1200px; */
   height: 500px;
-  background-color: #ffffff;
+  background-color:  #f1d04a;
   border-radius: 25px;
   -webkit-box-shadow: -1px 6px 80px 10px rgba(197, 197, 197, 0.8);
   -moz-box-shadow: -1px 6px 80px 10px rgba(197, 197, 197, 0.8);
@@ -118,7 +118,7 @@ h1 {
   display: block;
   height: 30px;
   line-height: 26px;
-  color: #7e7e7e;
+  color:#036c81;
 }
 
 .product{
@@ -154,7 +154,7 @@ h1 {
 
 .cart-price{
   display: flex;
-  margin-left: 50px;
+  margin: 20px 0 0 50px;
   justify-content: space-between;
   align-items: center;
   height: 80px;
@@ -168,7 +168,7 @@ h1 {
   float: left;
   height: 50px;
   width: 300px;
-  background-image: linear-gradient(40deg, #0ba360 0%, #3cba92 100%);
+  background-image: linear-gradient(40deg,  #f5a01f 0%,  #f2b14f 100%);
     border: none;
     color: white;
     padding: 15px 80px;
@@ -186,7 +186,7 @@ h1 {
   float: left;
   height: 50px;
   width: 300px;
-  background-image: linear-gradient(40deg, #0ba360 0%, #3cba92 100%);
+  background-image: linear-gradient(40deg, #3d6bbc 0%, #0e64f7 100%);
     border: none;
     color: white;
     padding: 10px;
@@ -272,4 +272,8 @@ h1 {
 }
 .desktop {
   display: flex;
+}
+
+.dark-mode h3{
+  color: white;
 }

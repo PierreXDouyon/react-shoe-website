@@ -43,18 +43,10 @@ const App = ({ }) => {
     }
 
 
-    const handlePrevClick = () => {
-        setActiveSlide3(activeSlide3 - 1 >= 0 ? activeSlide3 - 1 : products.length - 1);
-    };
-    
-    const handleNextClick = () => {
-        setActiveSlide3((activeSlide3 + 1) % products.length);
-    };
-
 
     const ViewProduct = (product) => {
         localStorage.setItem('product', JSON.stringify(product))
-        navigate("/web-framework/react-shoe/product");
+        navigate("/product");
         // onOpenModal(product)
     }
 
@@ -80,7 +72,7 @@ const App = ({ }) => {
                         <h1>MAXLETE</h1>
                     </div>
                     <h2>Maximize Your Performance in Style</h2>
-                    <p>The ultimate shoe for 90s nostalgia. Stylish, durable, comfortable, & 100% made from recycled materials. Feel the difference with Maxlete!</p>                  
+                    <p>The Ultimate Shoe for Your 90s Nostalgia. Stylish, Durable, Comfortable, & 100% Made from Recycled Materials! <span>&#x267B;</span> </p>                  
                     <h2>View our latest Fall Collection</h2>
                     <Carousel
                         containerProps={{
@@ -268,9 +260,6 @@ const App = ({ }) => {
                             ))}
                         </Carousel>                     
                     </Modal>
-                </div>
-                <div className="main-content">
-                    <p>Watercolors can also be made opaque by adding Chinese white.</p>
                 </div>
             </div>
         </div>

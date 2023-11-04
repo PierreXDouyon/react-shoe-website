@@ -49,26 +49,29 @@ a:hover {
 
 h1 {
  font-family: "Permanent Marker";
- font-size: 40px;
 }
 button {
  font-family: "Poppins";
 }
 h2 {
   font-weight: 700;
-    color: #2685ad;
-    font-size: 1.6rem;
-    line-height: 32px;
+    color: #c93127 !important;
+    font-size: 2.1rem !important;
+    line-height: 30px;
     font-family: "Bebas Neue";
-    letter-spacing: 1.5px;
+    letter-spacing: 1.9px !important;
+    margin-top: -5px;
 }
 
-p {
-  color: #0e3e52;
+.sidenav-content p {
+  color:  #673b90 !important;
   letter-spacing: 1px;
+  font-size: 1.3rem;
+  font-weight: 900 !important;
+  text-align: left;
   font-family: "Roboto";
-  margin-top: 15px;
-  margin-bottom: 35px;
+  margin-top: 15px !important;
+  margin-bottom: 65px !important;
 }
 
 .slider-click button {
@@ -111,13 +114,21 @@ p {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #f0ebe7;
+  background-color: #f1d04a;
   overflow-x: hidden;
   transition: 0.5s;
   padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.sidenav-logo h1{
+  font-size: 3.8rem;
+  margin-left: -32px;
+  color: white;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1.5px; 
 }
 
 .sidenav .closebtn {
@@ -169,7 +180,7 @@ p {
 
 .sidenav-content {
   padding-block: min(20vh, 2rem);
-  margin: 3.5rem 3rem;
+  margin: -4.2rem 3rem;
 }
 
 
@@ -177,9 +188,9 @@ p {
 #main {
   transition: margin-left 0.5s;
   padding: 2.5rem 3rem;
-  height: 100vh;
-  min-height: 630px;
-  background: url("https://cdn.pixabay.com/photo/2020/02/04/06/16/watercolour-4817390_960_720.jpg") no-repeat 50% 50% / cover;
+  height: 150vh;
+  width: 75vw;
+  margin-top: -125px;
   background-position: top center;
   background-size: cover;
   display: grid;
@@ -461,7 +472,15 @@ p {
 }
 
 .dark-mode h1{
-  color: white;
+  color:  #3d6bbc ;
+}
+
+.dark-mode h2{
+  color:  #2685ad!important; ;
+}
+
+.dark-mode p{
+  color: white !important;
 }
 
 .dark-mode #toggle {
