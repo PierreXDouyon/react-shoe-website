@@ -98,6 +98,20 @@ h2 {
   justify-content: center;
 }
 
+@media screen and (max-width: 576px) {
+  h1 {
+  font-size: 3.6rem!important;
+  padding-left: 25px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  h1 {
+    margin-top: 110px;
+    text-align: center;
+  }
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
@@ -424,6 +438,7 @@ h2 {
   cursor: pointer;
   box-shadow: 0px 5px 20px -10px #000000;
   transition: background-color 0.2s ease-in;
+  z-index: 3;
 }
 
 #toggle .toggle-inner {
@@ -493,4 +508,22 @@ h2 {
 
 .emailForm button{
  margin-left: 10px;
+}
+
+.emailForm h2{
+  margin: 30px 0 -2px 0;
+}
+
+input{
+  margin: 10px 0;
+}
+
+.emailForm button{
+  color: white;
+  background-color: #673b90;
+}
+
+#bulb{
+  display: flex;
+  justify-content: center;
 }

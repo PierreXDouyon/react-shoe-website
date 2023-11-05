@@ -27,6 +27,9 @@ const DarkMode = ({}) => {
                 id="toggle"
                 onClick={() => darkHandle()}
             >
+              <span id="bulb">	
+              &#128161;
+              </span>
                 <div className="toggle-inner"/>
             </div>
     )
