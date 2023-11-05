@@ -168,7 +168,7 @@
   float: left;
   height: 50px;
   width: 300px;
-  background-image: linear-gradient(40deg,  #f5a01f 0%,  #f2b14f 100%);
+  background-image: linear-gradient(40deg,  #fc9a07 0%,  #fba82b 100%);
     border: none;
     color: white;
     padding: 15px 80px;
@@ -198,6 +198,13 @@
     cursor: pointer;
     margin-left: 50px;
 }
+
+.right-rounded-column button:hover{
+transform: scale(1.1);
+opacity: 0.85;
+border: white 2px solid;
+}
+
 .mobile .button2 {
   margin: 0px;
   margin-top: 30px;

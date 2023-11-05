@@ -203,6 +203,12 @@ h2 {
   }
 }
 
+.image-item img:hover {
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
 #main {
   transition: margin-left 0.5s;
   padding: 2.5rem 3rem;
@@ -427,6 +433,16 @@ h2 {
     border-radius: 10px;
     font-size: 20px;
     cursor: pointer;
+}
+
+.productView button:hover{
+    transform: scale(1.1);
+    opacity: 0.85;
+    border: white 2px solid;
+}  
+
+button:hover {
+cursor: pointer;
 }
 
 #toggle {

@@ -254,7 +254,7 @@ const App = ({ }) => {
                             >
                                 <img src={item.img} />
                                 <div className="productView">
-                                    <button onClick={() => {ViewProduct(item)}}>View</button>
+                                    <button onClick={() => {ViewProduct(item)}}>More</button>
                                 </div>
                             </div>
                             ))}
