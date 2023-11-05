@@ -197,7 +197,11 @@ h2 {
   margin: -4.2rem 3rem;
 }
 
-
+@media (max-width: 358px) {
+  .sidenav-content {
+    margin: -4.2rem 2rem;
+  }
+}
 
 #main {
   transition: margin-left 0.5s;
