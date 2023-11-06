@@ -44,7 +44,10 @@ const App = ({ }) => {
 
     const ViewProduct = (product) => {
         localStorage.setItem('product', JSON.stringify(product))
-        window.location.href = "/product"
+        // window.location.href = "/web-framework/react-shoe/product"
+        const ProductNavigateEvt = new CustomEvent("ProductNavigate", {detail: "product"});
+        document.dispatchEvent(ProductNavigateEvt);
+        navigate('/web-framework/react-shoe/product');
     }
 
     const darkmodeClick = (e) => {

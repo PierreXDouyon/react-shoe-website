@@ -4,6 +4,7 @@ import React, {useEffect, useState} from 'react'
 const DarkMode = ({}) => {
     const isdark = localStorage.getItem("darkmode")?JSON.parse(localStorage.getItem("darkmode")):false;
     const [ darkMode, setDarkMode ] = useState(isdark);
+    const [isProduct, setIsProduct] = useState(false);
 
     const darkHandle = () => {
         localStorage.setItem("darkmode", !darkMode);
@@ -14,7 +15,17 @@ const DarkMode = ({}) => {
     console.log("--current url", currentURL)
 
     const Home = () => {
-      window.location.href = "/"
+      setIsProduct(false);
+      window.location.href = "/web-framework/react-shoe/"
+    }
+
+    const ProductNavigate = (e) => {
+      console.log("--product navigate", e.detail)
+      if (e.detail === "product") {
+        setIsProduct(true);
+      } else {
+        setIsProduct(false);
+      }      
     }
 
     useEffect(() => {
@@ -30,6 +41,13 @@ const DarkMode = ({}) => {
         const overlayEvt = new CustomEvent("DarkmodeHandle", {detail: darkMode});
           document.dispatchEvent(overlayEvt);
     }, [darkMode])
+
+    useEffect(() => {
+      document.addEventListener("ProductNavigate", ProductNavigate);
+        return () => {
+          document.removeEventListener("ProductNavigate", ProductNavigate);
+        }
+    }, []);
     
     return (<div>
             <div
@@ -42,7 +60,7 @@ const DarkMode = ({}) => {
                 <div className="toggle-inner"/>
                 
             </div>
-            {currentURL.includes("product") && <button className='homeBtn'  onClick={() => Home()}>&#127968;</button>}            
+            {isProduct && <button className='homeBtn'  onClick={() => Home()}>&#127968;</button>}            
           </div>            
     )
 }

@@ -256,10 +256,11 @@
 @media screen and (max-width: 712px) {
   .rounded-background-box {
     width: 360px;
-    height: 105vh;
+    height: 115vh;
   }
   .product-info p{
-    font-size: .92rem !important;
+    font-size: .9rem !important;
+    padding-right: 12px;
   }
 
   span{
@@ -287,6 +288,7 @@
   width: 360px;
   float: unset;
   margin-top: -25px;
+  padding-left: 10%;
   margin: auto;
 }
 

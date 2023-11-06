@@ -14,8 +14,8 @@ ReactDOM.render(
         <DarkMode />
         <Router>
             <Routes>
-                <Route exact path="/" element={<App />} />
-                <Route exact path="/product" element={<Product />} />
+                <Route exact path="/web-framework/react-shoe/" element={<App />} />
+                <Route exact path="/web-framework/react-shoe/product" element={<Product />} />
             </Routes>            
         </Router>
     </Provider>, 
