@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 
+
 const DarkMode = ({}) => {
     const isdark = localStorage.getItem("darkmode")?JSON.parse(localStorage.getItem("darkmode")):false;
     const [ darkMode, setDarkMode ] = useState(isdark);
@@ -8,6 +9,14 @@ const DarkMode = ({}) => {
         localStorage.setItem("darkmode", !darkMode);
         setDarkMode(!darkMode)       
     }
+
+    const currentURL = window.location.pathname;
+    console.log("--current url", currentURL)
+
+    const Home = () => {
+      window.location.href = "/"
+    }
+
     useEffect(() => {
         const body = document.body
         const toggle = document.querySelector('.toggle-inner')
@@ -22,7 +31,7 @@ const DarkMode = ({}) => {
           document.dispatchEvent(overlayEvt);
     }, [darkMode])
     
-    return (
+    return (<div>
             <div
                 id="toggle"
                 onClick={() => darkHandle()}
@@ -31,7 +40,10 @@ const DarkMode = ({}) => {
               &#128161;
               </span>
                 <div className="toggle-inner"/>
+                
             </div>
+            {currentURL.includes("product") && <button className='homeBtn'  onClick={() => Home()}>&#127968;</button>}            
+          </div>            
     )
 }
 

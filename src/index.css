@@ -49,18 +49,21 @@ a:hover {
 
 h1 {
  font-family: "Permanent Marker";
+ font-size: 40px;
+ line-height: 1.2;
 }
 button {
  font-family: "Poppins";
 }
 h2 {
   font-weight: 700;
-    color: #c93127 !important;
-    font-size: 2.1rem !important;
-    line-height: 30px;
+  color: #c93127 !important;
+  font-size: 2.1rem !important;
+  line-height: 30px;
     font-family: "Bebas Neue";
     letter-spacing: 1.9px !important;
     margin-top: -5px;
+    margin-left: 20px;
 }
 
 .sidenav-content p {
@@ -82,7 +85,7 @@ h2 {
     margin: 10px 10px;
     font-weight: bold;
     color: white;
-    background: #a39e9e;
+    background-color: #f1d04a;
     font-size: 16px;
     display: flex;
     justify-content: center;
@@ -97,7 +100,6 @@ h2 {
   display: flex;
   justify-content: center;
 }
-
 @media screen and (max-width: 576px) {
   h1 {
   font-size: 3.6rem!important;
@@ -106,7 +108,7 @@ h2 {
 }
 
 @media screen and (max-width: 490px) {
-  h1 {
+  .sidenav-content h1 {
     margin-top: 110px;
     text-align: center;
   }
@@ -136,7 +138,6 @@ h2 {
   flex-direction: column;
   justify-content: space-between;
 }
-
 .sidenav-logo h1{
   font-size: 3.8rem;
   margin-left: -32px;
@@ -144,6 +145,7 @@ h2 {
   -webkit-text-stroke-color: black;
   -webkit-text-stroke-width: 1.5px; 
 }
+
 
 .sidenav .closebtn {
   position: absolute;
@@ -212,9 +214,9 @@ h2 {
 #main {
   transition: margin-left 0.5s;
   padding: 2.5rem 3rem;
-  height: 150vh;
-  width: 75vw;
-  margin-top: -125px;
+  height: 100vh;
+  min-height: 630px;
+  background: url("https://cdn.pixabay.com/photo/2020/02/04/06/16/watercolour-4817390_960_720.jpg") no-repeat 50% 50% / cover;
   background-position: top center;
   background-size: cover;
   display: grid;
@@ -283,8 +285,11 @@ h2 {
 }
 
 #main .menu {
+  position: absolute;
+    right: 8%;
+    z-index: 9;
+    top: 2%;
   background: white;
-  position: relative;
   content: "";
   border-radius: 50%;
   width: 60px;
@@ -302,7 +307,9 @@ h2 {
 
 @media (min-width: 700px) {
   #main.active {
-    margin-left: 350px;
+    /* margin-left: 350px; */
+    padding: 0;
+    position: relative;
   }
 }
 
@@ -392,7 +399,7 @@ h2 {
   box-shadow: none !important;
 }
 #landing-modal .react-responsive-modal-closeButton {
-  display: none !important;
+  background-color: white;
 }
 
 #landing-modal .image-item img {
@@ -410,10 +417,31 @@ h2 {
   justify-content: center;
 }
 
+@media only screen and (max-width: 718px) and (min-width: 415px){
+  #landing-modal .image-item img {
+    width: 400px !important;
+    height: 400px !important;
+  }
+  #landing-modal {
+    display: block;
+    top: 20%;
+  }
+  
+}
+
 @media screen and (max-width: 414px) {
-  #main .react-responsive-modal-modal .image-item img {
-    width: 300px !important;
-    height: 300px !important;
+  #landing-modal .image-item img {
+    width: 265px !important;
+    height: 275px !important;
+  }
+  #landing-modal {
+    display: block;
+    top: 20%;
+  }
+
+  #main .menu {
+    right: 5% !important;
+    top: 3% !important;
   }
 }
 
@@ -436,9 +464,9 @@ h2 {
 }
 
 .productView button:hover{
-    transform: scale(1.1);
-    opacity: 0.85;
-    border: white 2px solid;
+  transform: scale(1.1);
+  opacity: 0.85;
+  border: white 2px solid;
 }  
 
 button:hover {
@@ -447,7 +475,8 @@ cursor: pointer;
 
 #toggle {
   position: absolute;
-  right: 20%;
+  right: 23%;
+  z-index: 9;
   top: 3%;
   width: 50px;
   display: flex;
@@ -508,6 +537,8 @@ cursor: pointer;
 
 .dark-mode h1{
   color:  #3d6bbc ;
+  -webkit-text-stroke: white;
+  -webkit-text-stroke-width: 1.5px;
 }
 
 .dark-mode h2{
@@ -547,3 +578,43 @@ input{
   display: flex;
   justify-content: center;
 }
+
+.mainBackgroundImg{
+    position: absolute;
+    left: 350px;
+    top: 0;
+    width: calc(100% - 350px);
+    height: 100%;
+    object-fit: initial;
+    z-index: 0;
+}
+.mainBackgroundImg-close {
+  position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: initial;
+    z-index: 0;
+}
+
+.homeBtn {
+  position: absolute;
+  left: 20%;
+  top: 3.5%;
+  height: 40px;
+  width: 65px;
+  border-radius: 30px;
+  background-image: linear-gradient(40deg, #673b90 0%, #7c47ae 100%);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 575;
+  letter-spacing: 0.05em;
+}
+
+.homeBtn:hover{
+  transform: scale(1.1);
+  opacity: 0.85;
+  border: black 2px solid;
+  }

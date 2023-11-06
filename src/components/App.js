@@ -42,12 +42,9 @@ const App = ({ }) => {
         setNavOpen(false);
     }
 
-
-
     const ViewProduct = (product) => {
         localStorage.setItem('product', JSON.stringify(product))
-        navigate("/product");
-        // onOpenModal(product)
+        window.location.href = "/product"
     }
 
     const darkmodeClick = (e) => {
@@ -61,18 +58,18 @@ const App = ({ }) => {
           }
       }, []);    
     const navIconClass = navOpen ? 'open' : '';
-    const mainBackground = isdark ? "assets/image/hero-image-dark-mode.jpg":"assets/image/hero-image.jpeg";
+    const mainBackground = isdark ? "assets/image/hero-image-dark-mode.jpeg":"assets/image/hero-image.jpeg";
     return (
         <div className={'wrapper'}>
             <div id="mySidenav" className={navOpen ? 'sidenav active' : 'sidenav'}>
-            <button className="closebtn" onClick={()=>closeNav()}>&times;</button>
+            {/* <button className="closebtn" onClick={()=>closeNav()}>&times;</button> */}
                 
                 <div className="sidenav-content">
                     <div className="sidenav-logo">
                         <h1>MAXLETE</h1>
                     </div>
                     <h2>Maximize Your Performance in Style</h2>
-                    <p>The Ultimate Shoe for Your 90s Nostalgia. Stylish, Durable, Comfortable, & 100% Made from Recycled Materials! <span>&#x267B;</span> </p>                  
+                    <p>The Ultimate Shoe for Your 90s Nostalgia. Stylish, Durable, Comfortable, & 100% Made from Recycled Materials! <span>&#x267B;</span> </p>
                     <h2>View our latest Fall Collection</h2>
                     <Carousel
                         containerProps={{
@@ -82,8 +79,9 @@ const App = ({ }) => {
                             userSelect: "none"
                         }
                         }}
+                        autoplay={true}
                         preventScrollOnSwipe
-                        swipeTreshold={60}
+                        swipeTreshold={600}
                         activeSlideIndex={activeSlide2}
                         responsiveProps={[
                             {
@@ -138,7 +136,7 @@ const App = ({ }) => {
                             }
                         }
                         }}
-                        speed={600}
+                        speed={8500}
                         centerMode
                     >
                         {products.map((item, index) => (
@@ -160,7 +158,8 @@ const App = ({ }) => {
                     </Carousel>
                 </div>
             </div>
-            <div id="main" className={navOpen ? 'active' : ''} style={{backgroundImage:`url(${mainBackground}` }}>
+            <div id="main" className={navOpen ? 'active' : ''}>
+                <img src={mainBackground} className={navOpen ? 'mainBackgroundImg' : 'mainBackgroundImg-close'} />
             
                 <div className="menu" onClick={()=>toggleNav()}>
                     <div id="nav-icon" className={navIconClass}>
@@ -170,7 +169,7 @@ const App = ({ }) => {
                     </div>
                 </div>
                 <div>
-                    <Modal open={open} onClose={onCloseModal} modalId="landing-modal" center>
+                    <Modal open={open} onClose={onCloseModal} modalId="landing-modal" center closeOnOverlayClick={false}>
                         <Carousel
                             containerProps={{
                             style: {
@@ -237,7 +236,7 @@ const App = ({ }) => {
                                     }
                                 }
                                 }}
-                            speed={600}
+                            speed={2500}
                             centerMode
                         >
                             {products.map((item, index) => (
@@ -260,6 +259,9 @@ const App = ({ }) => {
                             ))}
                         </Carousel>                     
                     </Modal>
+                </div>
+                <div className="main-content">
+                    <p>Watercolors can also be made opaque by adding Chinese white.</p>
                 </div>
             </div>
         </div>

@@ -29,6 +29,7 @@ const Product = ({}) => {
     // create an event listener
     useEffect(() => {
       window.addEventListener("resize", handleResize)
+      handleResize()
     })
     return (
         <div className="rounded-background-box">
